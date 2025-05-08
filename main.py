@@ -34,10 +34,10 @@ SEASONS = {
     'B': ['16184', '22932', '27593', '36162', '40557', '49058', '59015', '72603'],
 }
 
-# URL base que será usado para pegar os dados da equipe informada
+# URL base da API do SofaScore para obter estatísticas por time, divisão e temporada
 BASE_URL = 'https://api.sofascore.com/api/v1/team/{team_id}/unique-tournament/{serie}/season/{season_id}/statistics/overall'
 
-# Função que permite a escolha da equipe 
+# Coleta os dados estatísticos do time informado entre 2018 e 2025
 def escolher_equipe(time: str):
     division = input('Em qual divisão o time está? (A ou B) ').strip().upper()
     if division not in TEAM_IDS or time.lower() not in TEAM_IDS[division]:
@@ -51,6 +51,7 @@ def escolher_equipe(time: str):
     for season_id, ano in zip(SEASONS[division], anos):
         url = BASE_URL.format(team_id=team_id, serie=serie, season_id=season_id)
 
+        # Configura o Chrome em modo headless para buscar os dados JSON
         options = webdriver.ChromeOptions()
         options.add_argument("--headless")
         driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
@@ -65,7 +66,7 @@ def escolher_equipe(time: str):
 
     return data_list
 
-# Função que cria uma tabela exibindo os dados coletados das equipes
+# Constrói um DataFrame com as estatísticas por ano do time selecionado
 def criar_dataframe(time: str): 
     dados = escolher_equipe(time)
     dados_filtrados = [d for d in dados if isinstance(d, dict) and 'ano' in d]
@@ -76,16 +77,18 @@ def criar_dataframe(time: str):
     estatisticas = sorted({k for d in dados_filtrados for k in d if k != 'ano'})
     df = pd.DataFrame(index=estatisticas)
 
+    # Adiciona os dados ano a ano ao DataFrame
     for d in sorted(dados_filtrados, key=lambda x: x['ano']):
         ano = str(d['ano'])
         df[ano] = pd.Series({k: d.get(k, 0) for k in estatisticas})
 
-    df = df.applymap(lambda x: float(f"{x:.0f}"))
+    # Formata os valores e adiciona a média final
+    df = df.apply(lambda col: col.map(lambda x: float(f"{x:.0f}")))
     df['Media'] = df.mean(axis=1).round(1)
 
     return df
 
-# Função que elabora um gráfico visual para uma melhor visualização dos dados coletados
+# Gera um gráfico de barras comparando uma métrica específica entre dois times
 def criar_grafico(metric, time1, time2):
     df1 = criar_dataframe(time1)
     df2 = criar_dataframe(time2)
@@ -102,3 +105,20 @@ def criar_grafico(metric, time1, time2):
     ])
     fig.update_layout(title=metric.title(), barmode='group')
     fig.show()
+
+# Execução principal do programa
+if __name__ == "__main__":
+    while True:
+        # Coleta os times e a métrica desejada do usuário
+        time1 = input("Digite o primeiro time: ").strip().lower() # Pede a primeira equipe
+        time2 = input("Digite o segundo time: ").strip().lower() # Pede a segunda equipe
+        metrica = input("Digite a métrica que deseja visualizar (ex: goals, shotsOnTarget): ").strip() # Pede a estatística que será comparada
+
+        # Chama a função para criar o gráfico com os dados informados anteriormente
+        criar_grafico(metrica, time1, time2)
+
+        # Pergunta se o usuário deseja continuar ou encerrar
+        continuar = input("\nDeseja fazer outra análise? (s/n): ").strip().lower()
+        if continuar != 's':
+            print("Encerrando o programa. Obrigado por usar!")
+            break
