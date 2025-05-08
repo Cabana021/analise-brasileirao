@@ -34,6 +34,39 @@ plotly.graph_objects = Cria gráficos interativos de barra para visualização c
 Permite uma visualização clara e dinâmica dos dados entre clubes.
 
 Exemplo de Uso
+Ao executar o programa (python main.py), o usuário será guiado por etapas interativas no terminal:
 
-criar_grafico('goalsScored', 'flamengo', 'palmeiras')
-Isso gerará um gráfico de barras comparando o número de gols entre Flamengo e Palmeiras de 2018 a 2025.
+1. Digite o primeiro time:
+Exemplo: flamengo
+
+2. Digite o segundo time:
+Exemplo: palmeiras
+
+3. Informe a divisão do primeiro time:
+Exemplo: A
+
+4. Informe a divisão do segundo time:
+Exemplo: A
+
+5. Digite a métrica que deseja visualizar:
+Exemplo: goalsScored
+
+6. Indique se deseja continuar:
+Exemplo: s (para fazer outra análise) ou n (para encerrar o programa)
+
+Isso gerará automaticamente um gráfico de barras comparando o desempenho dos dois clubes na métrica escolhida (neste caso, "gols marcados") durante as temporadas de 2018 a 2025.
+
+Exemplo de métrica
+Você pode usar qualquer uma das métricas disponíveis na base de dados da API, como por exemplo:
+
+goalsScored – Gols marcados
+
+shotsOnTarget – Finalizações no alvo
+
+ballPossession – Posse de bola
+
+passes – Total de passes
+
+yellowCards – Cartões amarelos
+
+...entre outros (os nomes devem ser idênticos aos retornados pela API).
