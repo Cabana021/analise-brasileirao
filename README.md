@@ -4,16 +4,16 @@ Este projeto coleta, organiza e visualiza estatísticas históricas (2018–2025
 
 Como funciona
 
-1. Escolha do Time
+1. Escolha do Time:
    O usuário informa o nome do clube e a divisão (A ou B). O sistema verifica a validade do time e carrega os dados da API do SofaScore para cada temporada.
 
-2. Coleta de Dados
+2. Coleta de Dados:
    Para cada temporada (de 2018 a 2025), o programa acessa a URL correspondente do SofaScore utilizando Selenium em modo "headless" e extrai os dados estatísticos via JSON.
 
-3. Organização em DataFrame
+3. Organização em DataFrame:
    Os dados são convertidos em um DataFrame do pandas, contendo estatísticas por temporada e uma média final. Isso facilita a leitura e análise.
 
-4. Visualização Gráfica
+4. Visualização Gráfica:
    O usuário pode comparar uma métrica específica (como gols, chutes, passes etc.) entre dois clubes ao longo dos anos por meio de gráficos de barras com Plotly.
 
 Bibliotecas Utilizadas e Justificativas
