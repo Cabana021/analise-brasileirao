@@ -26,7 +26,7 @@ def fetch_team_data(time: str, division: str):
 
     # O bloco try...finally garante que o navegador seja fechado, mesmo se ocorrer um erro.
     try:
-        # 3. O loop agora apenas reutiliza o driver já existente.
+        # O loop agora apenas reutiliza o driver já existente.
         for season_id, ano in zip(SEASONS[division], anos):
             url = BASE_URL.format(team_id=team_id, serie=serie, season_id=season_id)
 
