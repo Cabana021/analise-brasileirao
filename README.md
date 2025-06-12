@@ -32,7 +32,6 @@ Ferramenta para comparar estatísticas históricas (2018–2025) de clubes das S
   - webdriver-manager
   - pandas
   - plotly
-  - nbformat
 
 ---
 
