@@ -7,7 +7,7 @@ Ferramenta para comparar estatísticas históricas (2018–2025) de clubes das S
 
 - **Escolha dos Times:** Informe o nome e a divisão (A ou B) de dois clubes. O sistema valida os times e carrega os dados da API para cada temporada.
 - **Coleta de Dados:** Para cada temporada de 2018 a 2025, o programa acessa a URL do SofaScore usando Selenium em modo headless, extraindo os dados em JSON.
-- **Organização:** Os dados são convertidos em DataFrames pandas, com estatísticas por temporada e média final para facilitar a análise.
+- **Organização:** Os dados são convertidos em DataFrames pandas, com estatísticas por temporada para facilitar a análise.
 - **Visualização:** Gráficos de barras interativos com Plotly mostram a comparação das métricas escolhidas entre os dois clubes ao longo dos anos.
 ---
 
