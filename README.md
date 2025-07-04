@@ -4,9 +4,18 @@
 
 ## 🖼️ Demonstração
 
-<img src="screenshots/running_cmd.png" alt="Execução em andamento" width="600"/>
-<img src="screenshots/graph_screen.png" alt="Gráfico gerado" width="600"/>
+### 🔹 1. Entrada dos Dados
+
+<img src="screenshots/running_cmd.png" alt="Entrada de dados no terminal" width="600"/>
+
+### 🔹 2. Execução e Scraping
+
 <img src="screenshots/ending_cmd.png" alt="Execução finalizada" width="600"/>
+
+### 🔹 3. Geração do Gráfico
+
+<img src="screenshots/graph_screen.png" alt="Gráfico gerado" width="600"/>
+
 ---
 
 ## ⚙️ Como Funciona
