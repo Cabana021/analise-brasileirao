@@ -1,6 +1,11 @@
 # Análise Estatística do Brasileirão (Séries A e B)
 
-Ferramenta para comparar estatísticas históricas (2018–2025) de clubes das Séries A e B do Campeonato Brasileiro, usando dados da API do SofaScore. Permite analisar e visualizar o desempenho dos times em tabelas e gráficos interativos.
+## Ferramenta para comparar estatísticas históricas (2018–2025) de clubes das Séries A e B do Campeonato Brasileiro, usando dados da API do SofaScore. Permite analisar e visualizar o desempenho dos times em tabelas e gráficos interativos.
+
+![Execução finalizada](screenshots/ending_cmd.png)
+![Execução em andamento](screenshots/running_cmd.png)
+![Exemplo de gráfico gerado](screenshots/graph_screen.png)
+
 ---
 
 ## ⚙️ Como Funciona
@@ -9,6 +14,7 @@ Ferramenta para comparar estatísticas históricas (2018–2025) de clubes das S
 - **Coleta de Dados:** Para cada temporada de 2018 a 2025, o programa acessa a URL do SofaScore usando Selenium em modo headless, extraindo os dados em JSON.
 - **Organização:** Os dados são convertidos em DataFrames pandas, com estatísticas por temporada para facilitar a análise.
 - **Visualização:** Gráficos de barras interativos com Plotly mostram a comparação das métricas escolhidas entre os dois clubes ao longo dos anos.
+
 ---
 
 ## 📈 Métricas Disponíveis (exemplos)
@@ -23,6 +29,7 @@ Ferramenta para comparar estatísticas históricas (2018–2025) de clubes das S
 - `cleanSheets` (Jogos sem sofrer gols)
 
 > Use os nomes idênticos aos retornados pela API.
+
 ---
 
 ## 📦 Requisitos
@@ -32,6 +39,7 @@ Ferramenta para comparar estatísticas históricas (2018–2025) de clubes das S
   - webdriver-manager
   - pandas
   - plotly
+
 ---
 
 ## 🚀 Instalação e Uso
