@@ -2,9 +2,11 @@
 
 ## Ferramenta para comparar estatísticas históricas (2018–2025) de clubes das Séries A e B do Campeonato Brasileiro, usando dados da API do SofaScore. Permite analisar e visualizar o desempenho dos times em tabelas e gráficos interativos.
 
-![Execução finalizada](screenshots/ending_cmd.png)
-![Execução em andamento](screenshots/running_cmd.png)
-![Exemplo de gráfico gerado](screenshots/graph_screen.png)
+## 🖼️ Demonstração
+
+<img src="screenshots/ending_cmd.png" alt="Execução finalizada" width="600"/>
+<img src="screenshots/running_cmd.png" alt="Execução em andamento" width="600"/>
+<img src="screenshots/graph_screen.png" alt="Gráfico gerado" width="600"/>
 
 ---
 
