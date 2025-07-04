@@ -4,10 +4,9 @@
 
 ## 🖼️ Demonstração
 
-<img src="screenshots/ending_cmd.png" alt="Execução finalizada" width="600"/>
 <img src="screenshots/running_cmd.png" alt="Execução em andamento" width="600"/>
 <img src="screenshots/graph_screen.png" alt="Gráfico gerado" width="600"/>
-
+<img src="screenshots/ending_cmd.png" alt="Execução finalizada" width="600"/>
 ---
 
 ## ⚙️ Como Funciona
